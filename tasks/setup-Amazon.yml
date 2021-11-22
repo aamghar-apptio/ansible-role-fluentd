@@ -4,18 +4,6 @@
     key: https://packages.treasuredata.com/GPG-KEY-td-agent
     state: present
 
-- name: Set Amazon link structure (v3).
-  set_fact: amz_release_ver = "$releasever/$releasever"
-  when: fluentd_version == 3
-
-- name: Set Amazon link structure (v4).
-  set_fact: amz_release_ver = "$releasever"
-  when: fluentd_version != 3
-
-- name: Debug
-  debug:
-    msg: "{{ ansible_facts['amz_release_ver'] }}"
-
 - name: Add td-agent repository.
   template:
     src: td.amz.repo.j2
