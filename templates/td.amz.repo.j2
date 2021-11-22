@@ -1,5 +1,5 @@
 [treasuredata]
 name=TreasureData
-baseurl=https://s3.amazonaws.com/packages.treasuredata.com/{{ fluentd_version }}/amazon/{{ ansible_facts[amz_release_ver] }}/$basearch
+baseurl=https://s3.amazonaws.com/packages.treasuredata.com/{{ fluentd_version }}/amazon/{{ ansible_facts['amz_release_ver'] }}/$basearch
 gpgcheck=1
 gpgkey=https://packages.treasuredata.com/GPG-KEY-td-agent
