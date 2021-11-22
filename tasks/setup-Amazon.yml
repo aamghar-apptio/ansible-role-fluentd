@@ -14,7 +14,7 @@
 
 - name: Debug
   debug:
-    msg: ansible_facts['amz_release_ver']
+    msg: "{{ ansible_facts['amz_release_ver'] }}"
 
 - name: Add td-agent repository.
   template:
