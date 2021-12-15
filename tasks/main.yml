@@ -1,12 +1,12 @@
 ---
 - include_tasks: setup-RedHat.yml
-  when: "{{ ansible_facts['distribution'] | lower }} == 'redhat'"
+  when: ansible_facts['distribution'] | lower == 'redhat'
 
 - include_tasks: setup-Debian.yml
-  when: "{{ ansible_facts['distribution'] | lower }} == 'debian'"
+  when: ansible_facts['distribution'] | lower == 'debian'
 
 - include_tasks: setup-Amazon.yml
-  when: "{{ ansible_facts['distribution'] | lower }} == 'amazon'"
+  when: ansible_facts['distribution'] | lower == 'amazon'
 
 - name: Install td-agent.
   package:
