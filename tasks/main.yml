@@ -1,9 +1,9 @@
 ---
 - include_tasks: setup-RedHat.yml
-  when: ansible_facts['distribution'] | lower == 'redhat'
+  when: ansible_facts['family'] | lower == 'redhat' and ansible_facts['distribution'] | lower != 'amazon'
 
 - include_tasks: setup-Debian.yml
-  when: ansible_facts['distribution'] | lower == 'debian'
+  when: ansible_facts['family'] | lower == 'debian'
 
 - include_tasks: setup-Amazon.yml
   when: ansible_facts['distribution'] | lower == 'amazon'
