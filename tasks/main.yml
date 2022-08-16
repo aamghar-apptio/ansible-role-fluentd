@@ -32,6 +32,11 @@
     fluent_gem_executable: /opt/td-agent/bin/fluent-gem
   when: fluentd_version >= 4
 
+- name: Remove rdkafka to prevent conflict with splunk HEC plugin
+  yum:
+    name: rdkafka
+    state: absent
+
 - name: Ensure Fluentd plugins are installed.
   gem:
     name: "{{ item.name | default(item) }}"
