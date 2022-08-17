@@ -39,6 +39,7 @@
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
     user_install: false
+    force: true
   with_items: "{{ fluentd_plugins }}"
 
 - name: Start Fluentd.
